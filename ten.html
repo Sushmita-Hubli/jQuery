@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>jQuery css() method --> sets or returns two or more style properties for the selected elements</h1>
+    <p id="p1">haha</p>
+    <p id="p2">second para</p>
+    <button id="btn">Click</button>
+    
+
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function()
+    {
+        $("#btn").click(function()
+    {
+        $("#p1").css("color","red");
+        $("#p2").css({
+           "color":"red",
+           "font-size":"60px",
+           "font-family":"Cooper"
+            
+        });
+
+        $("#p2").append("<h3>this is h3</h3>");//puts data inside an element at the last index
+        $("#p2").prepend("<h3>this is h3</h3>");//puts the prepending element at the first index
+
+
+        //after and before methods in jQuery
+        $("#p2").after("<h2>this is h2</h2>");//puts data after p2
+        $("#p2").before("<h2>this is h2</h2>");//puts data before p2
+
+
+
+
+    })
+
+    })
+    </script>
+</body>
+</html>

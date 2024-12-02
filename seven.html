@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Get content using text() , html(), val() and attr() methods</h1>
+
+    <p id="p2"> this is my <b>new</b>paragraph</p>
+    <p id="p1">this id my para normal</p>
+    <button id="btn">click for text()</button>
+    <button id="btn2">click for html() </button>
+    <br><br>
+    <h1>for form fields we use val() and not for asny html element</h1>
+    <input type="text" id="ip1" placeholder="enter your name">
+    <input type="number" id="ip2" placeholder="enter a number">
+    <input type="number" id="ip3" placeholder="enter second number">
+    <br><br>
+    <label for="">Male</label>
+    <input type="radio" name="gender" value="Male">
+    <label for="">Female</label>
+    <input type="radio" name="gender" value="Female">
+   
+    
+    <button id="btn3">clcik for val()</button>
+    <br><br>
+    <a href="http://www.goggle.com" title="Google" style="font-size: 50px;">Click to Open google</a>
+    <button id="btn4">click for attr()</button>
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function()
+    {
+
+
+        $("#btn").click(function()
+    {
+        var a=$("#p2").text();  //text() method is used to get only text but we cannotget any tag which we have written inside a element . here for example we have made new as bold but we cannot get <b> tag in the alert only text will be acquired here
+        var b=$("#p1").text();
+            alert(a+b); //output: this is my newparagraphthis id my para normal
+    })
+
+
+     $("#btn2").click(function()
+    {
+        var a=$("#p2").html();  //text() method is used to get text as well as any tag which we have written inside a element . here for example we have made new as bold  we can get <b> tag in the alert .
+        alert(a);  //output:  this is my <b>new</b>paragraph
+    })
+
+
+    $("#btn3").click(function()
+{
+    var a=$("#ip1").val();
+    var b=parseInt($("#ip2").val());
+    var c=parseInt($("#ip3").val());
+    var d=$("input[name='gender']:checked").val();
+    alert(a+" "+(b+c)+" "+d);
+})
+
+
+
+$("#btn4").click(function(){
+    var a= $("a").attr("style");
+    alert("returns the attributes of elements "+a);
+})
+
+
+
+    })
+    </script>
+</body>
+</html>

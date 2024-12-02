@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dib1
+        {
+            background-color: aqua;
+            border: 2px solid red;
+    padding: 10px;
+        }
+        #dib2
+        {
+            background-color: aqua;
+            border: 2px solid red;
+    padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>empty asnd remove method </h1>
+
+    <div id="dib1">
+        <p>haha of dib1</p>
+        <h3>hmmm</h3>
+    </div>
+
+    <div id="dib2">
+        <p>haha of dib2</p>
+        <h3>hmmm</h3>
+    </div>
+    <br><br>
+    <button id="btn1">Empty</button>
+    <button id="btn2">Remove</button>
+    <br><br>
+    <div id="dib3">
+        <p>remove() method can also be used to remove a particular element from a element by targetting that element </p>
+    <h2 id="hah">haha</h2>
+    <button id="btn3">remove with parameter of filtering out</button>
+
+    </div>
+    
+
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            $("#btn1").click(function()
+            {
+                $("#dib1").empty();  //empty method removes all the content of the dib1
+            })
+
+            $("#btn2").click(function()
+            {
+                $("#dib2").remove();  //remove method removes the entire dib2 from the html 
+            })
+            
+            $("#btn3").click(function()
+            {
+                $("#dib3 h2#hah").remove();
+            })
+
+
+        })
+    </script>
+</body>
+</html>

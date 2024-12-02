@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="firsth1">Welcome to jQuery</h1>
+    <h1>This document is about hide, show and toggle method of jQuery</h1>
+<br><br>
+   
+    <button id="hidebtn">Hide</button>
+    <button id="showbtn">Show</button>
+    <button id="hideandshowbtn">Hide and Show</button>
+
+    <br><br>
+    <h2>with arguments</h2>
+    <h2>with arguments</h2>
+    <button id="slowspeedhidebtn">slow speed Hide</button>
+    <button id="slowspeedshowbtn">slow speed Show</button>
+    <button id="slowspeedhideandshowbtn">slow speed Hide and Show</button>
+    <br><br>
+    <button id="highspeedhidebtn">high speed Hide</button>
+    <button id="highspeedshowbtn">high speed Show</button>
+    <button id="highspeedhideandshowbtn">high speed Hide and Show</button>
+    <br><br>
+    <button id="millispeedhidebtn">milli speed Hide</button>
+    <button id="millispeedshowbtn">milli speed Show</button>
+    <button id="millispeedhideandshowbtn">milli speed Hide and Show</button>
+    <br><br>
+    <h3>functions with speed and callback parameters</h3>
+    <button id="slowspeedhidebtnwithcallback">slow speed Hide</button>
+    <button id="slowspeedshowbtnwithcallback">slow speed Show</button>
+    <button id="slowspeedhideandshowbtnwithcallback">slow speed Hide and Show</button>
+<br><br>
+<button id="hideself">Hide myself</button>
+
+    <!--jQuery script tag-->
+    <script src="one.js"></script>
+    <!--my own script now-->
+    <script>
+        $(document).ready(function()
+    {
+     $("#hidebtn").click(function(){
+        $("h1").hide();  //hide method is used to hide the h1 tag
+     })
+
+     $("#showbtn").click(function(){
+        $("h1").show();
+     })
+
+     $("#hideandshowbtn").click(function()
+    {
+        $("h1").toggle();//hides and shows .first click hide then second click show
+    })
+
+
+
+    //the above methods with arguments. eg.  O$(selector).hide(speed,callback)   and same arguments with toggle and show method as well
+    //spped can be slow,fast or in milliseconds
+    $("#slowspeedhidebtn").click(function()
+{
+    $("h2").hide("slow");
+})
+$("#highspeedhidebtn").click(function(){
+    $("h2").hide("fast");
+})
+$("#millispeedhidebtn").click(function(){
+    $("h2").hide(4000);//hides in 4 seconds
+})
+
+
+$("#slowspeedshowbtn").click(function()
+{
+    $("h2").show("slow");
+})
+$("#highspeedshowbtn").click(function(){
+    $("h2").show("fast");
+})
+$("#millispeedshowbtn").click(function(){
+    $("h2").show(4000);//hides in 4 seconds
+})
+
+
+//speed for toggle button
+$("#slowspeedhideandshowbtn").click(function()
+{
+    $("h2").toggle("slow");
+})
+$("#highspeedhideandshowbtn").click(function(){
+    $("h2").toggle("fast");
+})
+$("#millispeedhideandshowbtn").click(function(){
+    $("h2").toggle(4000);//hides in 4 seconds
+})
+
+
+
+//with speed and callback function as argument for functions
+$("#slowspeedhidebtnwithcallback").click(function()
+{
+    $("h3").hide("slow",function()
+{
+    alert("slow speed hide button with callback");
+});
+})
+$("#slowspeedshowbtnwithcallback").click(function(){
+    $("h3").show("slow",function(){
+        alert("slow speed show button with callback");
+    });
+})
+$("#slowspeedhideandshowbtnwithcallback").click(function(){
+    $("h3").toggle("slow",function(){
+        alert("slow speed toggle button with callback");
+    });
+})
+
+//hiding the button itself
+$("#hideself").click(function()
+{
+    $(this).hide("slow");
+})
+
+})
+</script>
+</body>
+</html>

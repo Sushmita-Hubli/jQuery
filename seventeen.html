@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="">Gender: </label>
+        <input type="radio" name="gender" value="Male">
+        <label for="">Male</label>
+        <input type="radio" name="gender" value="Female">
+        <label for="">Female</label>
+        <br><br>
+        <input type="button" value="Submit" id="btn">
+    </form>
+    <br>
+    <div id="OutputDiv">
+
+    </div>
+    
+
+
+
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function()
+    {
+        $("#btn").click(function(){
+            var option=$('input[type="radio"]:checked');
+            if(option.length>0)
+        {
+            $("#OutputDiv").text(option.val());
+        }
+        else
+        {
+            $("#OutputDiv").text("please select an option");
+        }
+
+        })
+
+    })
+    </script>
+</body>
+</html>

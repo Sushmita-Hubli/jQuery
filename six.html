@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1
+        {
+            height: 120px;
+            width: 250px;
+            background-color: aqua;
+            display: none;
+        }
+        #div2
+        {
+            height: 120px;
+            width: 250px;
+            background-color: aqua;
+          
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Effects</h1><br><br>
+    <div id="div1">
+        <h1>this is a div</h1>
+        <p>this is my para</p>
+        <p>this is for fade in effect</p>
+    </div>
+    <button id="btn">FadeIn</button>
+    <br><br>
+    <div id="div2">
+        <h1>this is a div</h1>
+        <p>this is my para</p>
+        <p>this is for fade out effect</p>
+    </div>
+    <button id="btn1">FadeOut</button>
+    <br><br>
+    <div id="div3">
+        <h1>this is a div</h1>
+        <p>this is my para</p>
+        <p>this is for fade toggle effect</p>
+    </div>
+    <button id="btn2">fadeToggle</button>
+
+    <br><br>
+    <div id="div4">
+        <h1>this is a div</h1>
+        <p>this is my para</p>
+        <p>this is for fadeTo() effect-->this allows fading to a given opacity(value between 0 and 1). syntax:  $(selector).fadeTo(speed,opacity,callback)</p>
+    </div>
+    <button id="btn3">fadeTo</button>
+    
+
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function()
+    {
+        $("#btn").click(function()
+    {
+        $("#div1").fadeIn(4000,function()  //speed can be slow , fast or in milliseconds
+    {
+        alert("fadein with a speed of 4 sec and a callback function as alert");
+    })
+    })
+
+    //fade out
+    $("#btn1").click(function()
+    {
+        $("#div2").fadeOut("slow",function()
+    {
+        alert("fadeout with a speed of 3 sec and a callback function as alert");
+    })
+    })
+       
+    //fadetoggle
+    $("#btn2").click(function()
+{
+    $("#div3").fadeToggle(2000,function()
+{
+    alert("fadetoggle effect");
+})
+})
+
+
+//fadeto
+$("#btn3").click(function()
+{
+    $("#div4").fadeTo("fast",0.1,function()
+{
+    alert("fadeto effect");
+})
+})
+
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Setting text in html elements using jQuery</h1>
+    <p id="p1">Welcome to jQuery</p>
+    <button class="btn1">setting using text() method</button>
+<button class="btn2">setting using html() method</button>
+<br><br>
+<input type="text" id="txt1" placeholder="enter name">
+<button class="btn3">setting using val() method</button>
+<br><br>
+<a href="http://www.google.com" title="google" target="_blank">click to open google</a>
+    <button class="btn4">setting attribute using attr() method</button>
+
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function()
+    {
+        $(".btn1").click(function()
+    {
+        $("#p1").text("Sushmita <b>Chandrashekhar</b> Hubli");  //but the problem here is Chandrashekhar is not getting set to bold style when we use text methos
+
+    })
+
+    $(".btn2").click(function()
+    {
+        $("#p1").html("Sushmita <b>Chandrashekhar</b> Hubli");  //here chandrashekhar is getting set to bold
+    })
+
+
+    $(".btn3").click(function()
+{
+    $("#txt1").val("sushmita from northeastern university");
+})
+
+$(".btn4").click(function()
+{
+   /* $("a").attr("href","http://www.yahoo.com");//setting one attribute  */
+    //in order to set multiple attributes we will do the below mentioned thing
+    $("a").attr({
+        title:"yahoo",
+        href:"http://www.yahoo.com",
+        target:"_self"
+
+    });
+    $("a").text("click to open yahoo");
+})
+
+
+    })
+    </script>
+</body>
+</html>

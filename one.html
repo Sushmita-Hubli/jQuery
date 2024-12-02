@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p id="p1">JQUERY is massive,free , open source javascript library
+    BENEFITS:
+    1.Makes working with the DOM easier
+    2.Makes animations easier
+    3.Makes event handling easier
+    4.Makes AJAX really simple
+    4.Plus loads more...
+    5.Simplifies js programming
+    6.lightweight and concise
+    feature rich and open source library which simplifies complex tasks. 
+    Easy to use API which is compatibl with browsers.
+    Common tasks into built-in methods.
+    Reduce time in writing lines of code.
+    
+    
+    It has a special feature called Chaining 
+    $(element).hide().show().css({height:25});
+    code is less verbose and things get written quicker
+    
+    JS vs jQuery:
+    example. in js when we want to get a element by id we write document.getElementById("IdName");
+    whereas in jquery we write $("#idname");
+    in js we write document.getElementByClassName("classname"); 
+    in jQuery we write $(".classname")
+    in js we write document.getElementByTagName("TagName"); 
+    in jQuery we write $("TagName")
+    
+    
+    JQuery is a lightweight, "write less,do more" js library. The purpose of it is to make it much easier to use js on your website. It takes a lot of common tasks that require many lines of js code to accomplish, and wraps them into methods that you can call with a single line of code. It also simplifies a lot of complicated things from js, like AJAX calls and DOM manipulation.
+    
+    
+    Benefits of jQuery over JavaScript:
+    Reduced library size is in kb. Browser cache the library throughout websites instead of downloading it.
+    It also offers several utility functions like trim,etc..
+    It resolves cross browser issues.JQuery implemented compatibility code.
+    Exclusive community where developers improve functionality. offers several plugins which accelerate web development process Strong Community.
+    Creates AJAX templates and offers smooth interfaces and efficient loading AJAX support.
+    
+    
+    There are two versions of JQuery available for downloading:
+    1.Production version: this is for your live website because it has been minified and compressed
+    2.Development version: this is for testing and development (uncompressed and readable code)
+    
+    With JQuery you select (query) HTML elements and prform "actions " on them.
+    Basic Syntax is: $(selctor).action()
+    $ sign to define/access jQuery
+    (selector) to find HTML elements
+    A jQuery action() to be formed on the elements
+    Basic selectors:
+    $("#id_element") this is selection by id
+    $(".classname") this is selection by class
+    $("tagname") this is selection by tag
+    
+    
+    
+    
+    </p>
+
+    <p class="c1">KHUP ABHYAS KARAYCHA AHE BALA</p>
+    <h1>hahahaha</h1>
+       <button id="Btn">CLICK ME</button>
+
+
+    
+<!--including the cdn link
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+-->
+
+<!--including the js file which we made where we pasted the compressed jQuery code-->
+<script src="one.js"></script>
+<script>
+    //meaning of below code is that, whenever our webpage loads on browser, if our jQuery runs properly then we will gwt this alert. We have to create all our functions inside this
+    //The below mentioned code is important to implement jQuery always always
+  /* 
+$(document).ready(function()
+{
+    
+});
+*/
+
+$(document).ready(function()
+{
+    $("#Btn").click(function()
+{
+    //we use .css("property","property_value"); in order to change the css
+    $("#p1").css("color","brown");
+    $(".c1").css("backgroundColor","pink");
+    $("h1").css("backgroundColor","green");
+    $("p").css("font-family","cooper");
+});
+});
+
+
+</script>
+   </body>
+</html>

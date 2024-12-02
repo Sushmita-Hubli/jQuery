@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Events</h1>
+    <p>All the different visitors' actions that a web page can respond to are called events <br>
+       event represents the precise moment when something happens.eg. moving a mouse,selecting a radio button,etc...
+    </p>
+    <p>Commonly used jQuery event methods : $(document).ready() method allows us to execute a function
+        when the document is fully loaded
+    </p>
+
+    <div>
+        <h2>Mouse Events</h2>
+        <button class="click">click() method</button><br><br>
+        <p>contextmenu() -->function is executed when the right mouse button is clicked</p>
+        <button class="context">Context wala</button><br><br>
+        <button class="doubleclick">dblclick() method</button><br><br>
+        <p class="mouseenterandleave">mouseenter() and mouseleave()</p><br><br>
+
+        <p class="mousedown">This event is triggered when a mouse button is pressed down over an element.
+            It fires before the mouseup event.
+            It is often used to initiate actions like dragging or selecting elements.</p><br><br>
+        <p class="mouseup">This event is triggered when a mouse button is released over an element.
+            It fires after the mousedown event.
+            It is often used to complete actions like dragging or selecting elements.</p>
+        <p>Key differences:
+            Timing: mousedown occurs when the button is pressed, while mouseup occurs when the button is released.
+            Action: mousedown often initiates an action, while mouseup typically completes it.
+            Use case: mousedown is useful for tasks like dragging, while mouseup is used to finalize those actions.</p><br><br>
+            <p class="parafocus">focus() event --> executed when form field gets focus</p>
+            <label for="">name:</label><input type="text" class="focusandblurevent"><br><br>
+            <p class="onmethod">on() method attaches one or more event handlers for the selected elements</p>
+    </div>
+
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function()
+    {
+        $(".click").click(function()
+    {
+        $("body").css("background","yellow");
+    })
+
+    $(".context").contextmenu(function()
+{
+    $("body").css("background","red");
+})
+
+$(".doubleclick").dblclick(function()
+{
+    $("body").css("background","pink");
+})
+
+$(".mouseenterandleave").mouseenter(function()
+{
+    $(".mouseenterandleave").css("color","green");
+})
+
+$(".mouseenterandleave").mouseleave(function()
+{
+    $(".mouseenterandleave").css("color","brown");
+})
+
+$(".mousedown").mousedown(function(){
+    $(".mousedown").css("marginLeft","30px");
+})
+
+$(".mouseup").mouseup(function(){
+    $(".mouseup").css("marginLeft","30px");
+})
+
+$(".focusandblurevent").focus(function()
+{
+    $(".parafocus").css("background","red");
+})
+
+$(".focusandblurevent").blur(function()
+{
+    $(".parafocus").css("background","none");
+})
+
+$(".onmethod").on({
+    mouseenter:function(){
+        $(".onmethod").css("background","brown");
+    },
+    mouseleave:function(){
+        $(".onmethod").css("background","orange");
+ 
+    },
+    click:function(){
+        $(".onmethod").css("background","pink");
+  
+    }
+})
+       
+    })
+    </script>
+</body>
+</html>

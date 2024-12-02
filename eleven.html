@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>change , select and submit methods</h1>
+    <select  id="list1">
+        <option value="-1">Select fruit</option>
+        <option value="a">a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+        <option value="d">d</option>
+    </select>
+    <br><br>
+    <button id="btn">click</button>
+    <br>
+<h1 id="result"></h1>
+
+<br><br>
+<p>now its like we have to press the click button every time we select a fruit in order to display that fruit.But we want it to be printed immediately we select another fruit so for this we use method called change</p>
+<br> <br>
+<p>Select() method : select event occurs when a text is selected in a text area or a text field.</p>
+<br>
+<textarea  id="txtarea" cols="30" rows="10"></textarea><br><br>
+<p>submit() method: this event occurs when a form is submitted. this event can only be used on form element </p>
+<br><br>
+<form action="" id="form1">
+    <input type="text" id="fname" required placeholder="fname">
+    <input type="text" id="lnmae" required placeholder="lname">
+    <input type="submit" value="Submit">
+</form>
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            $("#btn").click(function()   //after using the change method, there remains no significance of this click method
+            {
+                var item=$("#list1").val();
+                if(item=="-1")
+                {
+                    alert("please select a fruit.");
+
+
+                }
+                else
+                {
+                    $("#result").text(item);
+
+                }
+            })
+
+            
+                $("#list1").change(function()  //change method works only on input,textarea and select elements
+                {
+                    var item=$("#list1").val();
+                    if(item=="-1")
+                {
+                    alert("please select a fruit.")
+
+                }
+                else
+                {
+                    $("#result").text(item);
+
+                }
+            
+
+               
+
+                    
+
+                });
+               
+
+                $("#txtarea").select(function()
+                {
+                    alert("haha");
+                })
+
+
+                $("#form1").submit(function(event)
+                {
+                    event.preventDefault();
+                    alert("Form has been submitted!!");
+                })
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Advance Selectors</p>
+<p>Heyy</p>
+<p>Hello</p>
+<h1>heading 1</h1>
+<h2>heading 2</h2>
+<h3>heading 3</h3>
+
+<button id="Btn">Click me</button>
+
+
+<ul id="List0">
+    <li>India</li>
+    <li>US</li>
+    <li>UK</li>
+    <li>Switzerland</li>
+    <li>Canada</li>
+</ul><br><br>
+<ul id="List1">
+    <li>India</li>
+    <li>US</li>
+    <li>UK</li>
+    <li>Switzerland</li>
+    <li>Canada</li>
+</ul>
+<ul id="List2">
+    <li>India</li>
+    <li>US</li>
+    <li>UK</li>
+    <li>Switzerland</li>
+    <li>Canada</li>
+</ul>
+
+<p class="p1">Sushmita</p>
+<p class="p2">Hubli</p>
+<p>!!!!</p>
+
+<button id="Btn2">Button 2</button>
+
+
+
+    <script src="one.js"></script>
+    <script>
+$(document).ready(function()
+{
+    $("#Btn").click(function()
+{
+    //* means everything--> Universal Selector
+    $("*").css("color","green");
+
+})
+
+
+    // ul li  -->Selecting list items
+$("#Btn2").click(function()
+{
+    
+    $("ul li").css("font-size","40px");//applies to all the ul present in your HTML
+    $("#List1 li").css("color","pink");
+    $(".p1, .p2").css("color","red"); //selecting multiple classes
+    $("h1,p,button").css("margin-left","40px")  //selcting multiple elements at a time
+    $("p:first").css("background","yellow");  //first paragraph
+    $("p:last").css("background","coral"); //last paragraph
+    $("#List0 li:even").css("background","pink"); //indexing starts from 0 
+    $("#List0 li:odd").css("background","green");
+    $("#List0 li:first-child").css("background","coral");
+    $("#List2 li:eq(2)").css("background","yellow"); //list item on second index cha background change hota
+    $("#List2 li:lt(2)").css("background","pink");//list items whose index is less than 2
+    $("#List2 li:gt(2)").css("background","green");//list items whose index is greater than 2
+    
+
+})
+})
+    </script>
+</body>
+</html>

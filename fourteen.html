@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>replacewith and replaceall method</h1>
+
+    <p id="p1">this is a para</p>
+    <P id="P2">2</P>
+    <p id="p3">3</p>
+
+    <br>
+    <button id="btn1">click1 REPLACEWITH</button>
+    <br><br>
+    <button id="btn2">click2 REPLACEWITH</button>
+    <br><br>
+    <button id="btn3">click3 REPLACEWITH</button>
+    <br><br>
+    <button id="btn4">click4 Replaceall</button>
+
+
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            $("#btn1").click(function()
+        {
+            var a=prompt("enter something");
+            $("#p1").replaceWith("<h1> "+ a +" </h1>"); //method replaces selected elements with new content
+
+        })
+
+        $("#btn2").click(function()
+    {
+        var b=prompt("Enter some text");
+        $("p:last").replaceWith("<h2> "+b+" </h2>");
+       
+    })
+
+    $("#btn3").click(function()
+{
+    var c=prompt("Enter some text");
+    $("p:eq(1)").replaceWith("<h3> "+c+" </h3>");//indexing starts from 0
+})
+
+$("#btn4").click(function()
+{
+    $("<h1>Replaces all elements matching the specified selector with the content provided, working as a reverse of replaceWith.</h1>").replaceAll("p");//means replaceall p tags with the h1 tag mentioned earlier
+    //.replaceAll and .replaceWith methods are similar but with the source and target reversed
+    
+
+})
+
+
+        })
+    </script>
+</body>
+</html>

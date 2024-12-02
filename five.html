@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>val() method of jQuery returns or sets the value attribute of the selected elements <br>
+    Note: it is mostly used with html form elements</h1>
+    <br><br>
+    <input type="text" placeholder="Enter number 1" id="num1">
+    <input type="text" placeholder="Enter number 2" id="num2">
+    <button id="addbtn">Add</button>
+   <h1 id="result"></h1>
+   <br><br>
+   <select  id="countries">
+    <option value="-1">Select a country</option>
+    <option value="India">India</option>
+    <option value="USA">USA</option>
+    <option value="China">China</option>
+   </select>
+   <br><br>
+   <button id="submit">submit</button>
+   <h2 id="result1"></h2>
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function(){
+  $("#addbtn").click(function(){
+    var num1=$("#num1").val();
+    var num2=$("#num2").val();
+
+    if(num1=="" || num2=="")
+  {
+    $("#result").text("please fill both fields.");
+  }
+  else
+  {
+    var add=parseInt(num1)+parseInt(num2);
+    $("#result").text("Addition: "+add);
+  }
+  })
+
+  $("#submit").click(function(){
+    var name=$("#countries").val();
+    if(name=="-1")
+  {
+    $("#result1").text("select an option");
+  }
+  else
+  {
+    $("#result1").text("You've selected: "+name);
+  }
+  })
+
+        })
+    </script>
+</body>
+</html>

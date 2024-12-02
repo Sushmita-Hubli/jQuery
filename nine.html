@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c1
+        {
+            background-color: aqua;
+
+        }
+        .c2
+        {
+           color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>AddClass, RemoveClass and ToggleClass Methods in jQuery</h1>
+    <p>This is a new class</p>
+    <p>This is a second para</p>
+    <h2 id="id1">this is h2</h2>
+    <button id="btn1">add class button</button>
+<br><br>
+<button id="btn2">Remove class button</button>
+<br><br>
+<h3 id="id2">i am h3</h3>
+<h3 id="id3">i am h3 2.0</h3>
+<button id="btn3">Toggle class button</button>
+ 
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function()
+    {
+        $("#btn1").click(function()
+    {
+        $("p , #id1").addClass("c1 c2");  //imp line
+    })
+
+    $("#btn2").click(function()
+    {
+        $("p , #id1").removeClass("c2");  //imp line
+        //if no parameter is passed inside the removeClass method, then it removes all the classes from the selected element
+    })
+
+    $("#btn3").click(function()
+    {
+        $("p , #id1").toggleClass("c1 c2");  //imp line
+        //toggle class has two paramerters one are the classes and second one is the boolean value
+        $("#id2").toggleClass("c1 c2",true); //classes will be added but they will not be removed
+
+
+        $("#id3").toggleClass("c1 c2",false); //classes will be removed but they will not be added
+
+    })
+
+
+
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1
+        {
+            height: 150px;
+            width: 200px;
+            background-color: aqua;
+            border: 5px black ridge;
+        }
+    </style>
+</head>
+<body>
+    <h2>wrap, unwrap, wrapAll and wrapInner methods </h2>
+    
+
+    <p id="p1">This is a paragraph</p>
+    <h1 id="h1">first h1</h1>
+    <h1 id="h2">second h1</h1>
+    <br>
+    <button id="btn1">Wrap</button>
+    <button id="btn2">unwrap</button>
+    <button id="btn3">wrapall</button>
+    <button id="btn4">wrapInner</button>
+    <button id="btn5">UnwrapInner</button>
+
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function()
+    {
+     
+        $("#btn1").click(function()
+    {
+        $("#p1").wrap("<div id='div1'></div>");
+        $("h1").wrap("<div id='div1'></div>");
+
+    })
+
+
+    $("#btn2").click(function()
+    {
+        $("#p1").unwrap();
+        $("h1").unwrap();
+
+    })
+
+    $("#btn3").click(function()
+    {
+       
+        $("h1 , #p1").wrapAll("<div id='div1'></div>");
+
+    })
+        
+    $("#btn4").click(function()
+    {
+       
+        $("#h1").wrapInner("<i></i>");//inner html ke andar wrapping hota hai yaha pe
+
+    })
+
+    $("#btn5").click(function()
+{
+    $("#h1 > i").contents().unwrap();
+
+})
+
+    })
+    </script>
+</body>
+</html>
